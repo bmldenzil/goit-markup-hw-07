@@ -42,6 +42,9 @@ body{
 h1,h2,h3,h4,h5,p,ul{
     margin: 0;
 }
+a {
+    text-decoration: none;
+}
 ul{
     padding: 0;
     list-style: none;
@@ -53,9 +56,7 @@ ul{
 .nav-flex{
     display: flex;
 }
-a {
-    text-decoration: none;
-}
+
 
 img{
     display: block;
