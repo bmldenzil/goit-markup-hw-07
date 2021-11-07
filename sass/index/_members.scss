@@ -1,9 +1,8 @@
 
-.members{
-    &__section{
+    .members__section{
     background-color: getColor('background');
     }
-    &__title{
+    .members__title{
         font-weight: 700;
         font-size: 36px;
         line-height: 1.16;
@@ -11,16 +10,16 @@
         letter-spacing: 0.03em;
         color: getColor('secondary');
     }
-    &__list{
+    .members__list{
         display: flex;
     
         margin-top: 50px;
     }
-    &__bar {
+    .members__bar {
         padding-top: 30px;
         padding-bottom: 30px;
     }
-    &__item{
+    .members__item{
         background-color: getColor('foreground');
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -30,7 +29,7 @@
             margin-right: 30px;
         }
     }
-    &__name{
+    .members__titul{
         font-weight: 500;
         font-size: 16px;
         line-height: 1.18;
@@ -38,7 +37,7 @@
         letter-spacing: 0.03em;
         color: getColor('secondary');
     }
-    &__text{
+    .members__text{
         margin-top: 10px;
     
         font-weight: normal;
@@ -49,44 +48,45 @@
         color: getColor('primary');
     }
 
-    & .social{
-        display: flex;
-        justify-content: center;
-        margin-top: 16px;
+.members__item{ .social{
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
 
-        list-style: none;
-        &__item:not(:last-child){
-            margin-right: 10px;
-        }
-        &__link{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background-color: inherit;
-        
-            transition-property:  background-color , fill;
-            transition-duration: 250ms;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            &:hover,
-            &:focus{
-                background-color: getColor('accent');
-            
-            }
-            &:hover svg,
-            &:focus svg{
-                fill: getColor('foreground');
-            }
-        }
-        &__icon{
-            fill: #afb1b8;
-        
-            transition-property: background-color, fill;
-            transition-duration: 250ms;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
+    list-style: none;
     }
+    .social__item:not(:last-child){
+        margin-right: 10px;
+    }
+    .social__link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: inherit;
+    
+        transition-property:  background-color , fill;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        &:hover,
+        &:focus{
+            background-color: getColor('accent');
+        
+        }
+        &:hover svg,
+        &:focus svg{
+            fill: getColor('foreground');
+        }
+    }
+    .social__icon{
+        fill: #afb1b8;
+    
+        transition-property: background-color, fill;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
 }

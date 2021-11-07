@@ -12,19 +12,20 @@
     transition-property: opacity, pointer-events;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    &.is-hidden{
+}
+    .backdrop.is-hidden{
 
         opacity: 0;
         pointer-events: none;
     }
-    &.is-hidden .modal{
+    .backdrop.is-hidden .modal{
     transform: translate(-50%, -50%) scale(0.2);
     opacity: 0;
     pointer-events: none;
     
     transition-delay: 0ms;
     }
-}
+
 .modal{
     position: absolute;
     width: 528px;
@@ -40,7 +41,8 @@
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-delay: 250ms;
-    &__close{
+}
+    .modal__close{
         position: absolute;
         top: 0;
         right: 0;
@@ -59,19 +61,22 @@
         border-radius: 50%;
         cursor: pointer;
     }
-    &__icon-close{
+    .modal__icon-close{
         fill: #000;
-    }
-    &__close:hover &__icon-close,
-    &__close:focus &__icon-close{
+        .modal__close:hover &,
+    .modal__close:focus &{
         fill: getColor('accent');
         border-color: getColor('accent');
     }
-}
+    }
+    
+
 .form{
     display: flex;
-    flex-direction: column;  
-    &__titul{
+    flex-direction: column; 
+    position: relative; 
+}
+    .form__titul{
         display: inline-block;
     
         margin-bottom: 30px;
@@ -82,13 +87,30 @@
     letter-spacing: 0.03em;
     color: getColor('secondary');
     }
-    &__field{
+    .form__field{
         position: relative;
     
         margin-bottom: 28px;
     
     }
-    &__input{
+.form__text{
+        position: absolute;
+        top: 50%;
+        left: 42px;
+        transform: translateY(-50%);
+    
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.14;
+        letter-spacing: 0.01em;
+    
+        transition-property: top, left, transform;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .form__input{
+        
         width: 100%;
         height: auto;
     
@@ -99,20 +121,36 @@
         border: 1px solid rgba(33, 33, 33, 0.2);
         box-sizing: border-box;
         border-radius: 4px;
+        &:placeholder-shown ~ .form__text{
+            position: absolute;
+            top: 50%;
+            left: 42px;
+            transform: translateY(-50%);
         
-        &:focus ~ .form__text,
-        &:not(:placeholder-shown) ~ .form__text{
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.14;
+            letter-spacing: 0.01em;
+        
+            transition-property: top, left, transform;
+            transition-duration: 250ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    
+        &:focus~.form__text{
             top: 0;
             left: 2px;
             transform: translateY(-120%);
             color: getColor('accent');
+            
 
             transition-property: top, left, transform;
             transition-duration: 250ms;
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
         }
-        &:not(:placeholder-shown, :focus) ~ .form__text{
+        &:not(:placeholder-shown,:focus) ~ .form__text{
             top: 0;
             left: 2px;
             transform: translateY(-120%);
@@ -129,39 +167,17 @@
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         
         }
-        &:focus{
-            border: 1px solid getColor('accent');  
-            box-sizing: border-box;
-            border-radius: 4px;
-            
-            transition-property: border;
-            transition-duration: 250ms;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        }
+
     }
-    &__icon{
+
+    .form__icon{
         position: absolute;
         top: 50%;
         left: 15px;
         transform: translateY(-50%);
     }
-    &__text{
-        position: absolute;
-        top: 50%;
-        left: 42px;
-        transform: translateY(-50%);
-    
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1.14;
-        letter-spacing: 0.01em;
-    
-        transition-property: top, left, transform;
-        transition-duration: 250ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    &__coments{
+
+    .form__coments{
         display: inline-block;
         width: 502px;
         resize: none;
@@ -193,7 +209,7 @@
        
         }
     }
-        &__button{
+    .form__button{
         
             width: 200px;
             height: 50px;
@@ -216,14 +232,8 @@
     
             }
         } 
-        &___checkbox .checkbox{
-            position: absolute;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-        
-        }
-        &__checkbox{
+        .form___checkbox 
+        .form__checkbox{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -232,7 +242,14 @@
             margin-right: auto;
         
         }
-}
+        .checkbox{
+            position: absolute;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        
+        }
+
 .coments__text{
     position: absolute;
     top: 16px;
@@ -250,15 +267,14 @@
 
     
 }
-.checkbox{
-    &__text{
+    .checkbox__text{
         font-weight: 400;
         font-size: 14px;
         line-height: 1.84;
         letter-spacing: 0.03em;
         padding-left: 7px;
     }
-    &__icon{
+    .checkbox__icon{
         width: 16px;
         height: 15px;
         background-image: url(../img/checkbox.svg);
@@ -266,14 +282,14 @@
         transition-duration: 250ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
-    &:checked + &__icon{
+    .checkbox:checked + .checkbox____icon{
         background-image: url(../img/checkbox-check.svg);
         transition-property: background-image;
         transition-duration: 250ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
-    &__link{
+    .checkbox__link{
         color: getColor('accent');
         text-decoration: solid;
     }
-}
+

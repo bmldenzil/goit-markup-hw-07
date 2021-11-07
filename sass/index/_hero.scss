@@ -1,11 +1,11 @@
-.main-top {& .conteiner{
+.hero {& .conteiner{
     display: flex;
     flex-direction: column;
     align-items: center;}
 
 }
 
-.main-top{
+.hero{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@
     background-repeat: no-repeat;
    
     }
-.main-text{
+.hero__text{
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
@@ -31,7 +31,7 @@
     color: getColor('foreground');
     margin-bottom: 30px;
 }
-.buton-top{
+.hero__button{
 
     padding: 10px 0px;
     cursor: pointer;

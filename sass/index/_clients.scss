@@ -1,29 +1,28 @@
 
-.client{
-    &__section{
+    .client__section{
     color: getColor('secondary');
     background-color: getColor('background');}
 
-    &__titul{
+    .client__titul{
         font-weight: bold;
         font-size: 36px;
         line-height: 1.16;
         text-align: center;
         letter-spacing: 0.03em;
     }
-    &__list{
+    .client__list{
         margin-top: 50px;
         display: flex;
     }
-    &__item{
+    .client__item{
         width: 170px;
         height: 92px;
         border: none;
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
     }
-    &__item:not(:last-child) {
-        margin-right: 30px;
-    }
-    &__link{
+    .client__link{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -44,4 +43,3 @@
     }
 
     
-}

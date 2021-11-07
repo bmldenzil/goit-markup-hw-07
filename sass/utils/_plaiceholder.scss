@@ -3,11 +3,21 @@
     margin-left: auto;
     margin-right: auto;
     padding: 0 15px;
+    &--flex{
+        display: flex;
+        &-center{  
+        justify-content: center;}
+    
+    }
 
 }
 .section{
     padding-top: 94px;
     padding-bottom: 94px;
+    &.section__no-pading-top{
+        padding-top: 0;
+    }
+
 }
 ul{
     padding: 0;
